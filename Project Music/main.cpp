@@ -1,25 +1,23 @@
-#include<iostream>
-#include"song.h"
-using namespace std;
+#include "track.h"
+#include <iostream>
 
 int main() {
 
-	Song song1("MamaRika", "Last Day", 2023);
-	Song song2("Metallica", "One", 1988);
-	Song song3("System of a down", "Forest", 2001);
+    Track track1("MamaRika", "LastDay", 2023, 210);  // “ривал≥сть 3 хвилини 30 секунд
+    Track track2("SystemOfADown", "Aerials", 2001, 236);   // “ривал≥сть 3 хвилини
 
-	song1.print();
-	song3.print();
-	song2.print();
+    track1.print();
+    track2.print();
 
-	cout << "Song 1 and 2 relese years are: " << endl;
-	if (song1 == song2) {
-		cout << "same." << endl;
-	}
-	else {
-		cout << "diferent." << endl;
+    if (track1 == track2) {
+        std::cout << "Track has same relese date.\n";
+    }
+    else {
+        std::cout << "Track has diferent relese date.\n";
+    }
 
-		cout << "Number of words in song name" << song1.wordsInTitle() << endl;
-		cout << "Number of words in song name" << song3.wordsInTitle() << endl;
-	}
+    track1 = track1 + 30;  // «б≥льшуЇмо тривал≥сть на 30 секунд
+    track1.print();
+
+    return 0;
 }
