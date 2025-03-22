@@ -13,4 +13,4 @@ public:
     void addTrackFromFile(const std::string& filename);  // Додати треки з файлу
     void printPlaylist() const;  // Вивести плейлист
     int getTotalDurationByGenre(const std::string& genre) const;  // Підрахувати загальну тривалість для жанру
-
+};
