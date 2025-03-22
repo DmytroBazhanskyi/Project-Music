@@ -1,23 +1,29 @@
 #include "track.h"
+#include "playlist.h"
 #include <iostream>
 
 int main() {
+    Track track1("MamaRika", "LastDay", 2023, 210, "Pop");  // Тривалість 3 хвилини 30 секунд
+    Track track2("SystemOfADown", "Aerials", 2001, 236, "Rock");   // Тривалість 3 хвилини
 
-    Track track1("MamaRika", "LastDay", 2023, 210);  // ��������� 3 ������� 30 ������
-    Track track2("SystemOfADown", "Aerials", 2001, 236);   // ��������� 3 �������
+    // Створення плейлиста
+    Playlist playlist;
+    playlist.addTrack(track1);
+    playlist.addTrack(track2);
 
-    track1.print();
-    track2.print();
+    // Виведення плейлиста
+    playlist.printPlaylist();
 
-    if (track1 == track2) {
-        std::cout << "Track has same relese date.\n";
-    }
-    else {
-        std::cout << "Track has diferent relese date.\n";
-    }
+    // Перевірка загальної тривалості для певного жанру
+    std::string genre = "Pop";
+    int totalDuration = playlist.getTotalDurationByGenre(genre);
+    std::cout << "Total duration for " << genre << " genre: " << totalDuration / 60 << " minutes and " << totalDuration % 60 << " seconds.\n";
 
-    track1 = track1 + 30;  // �������� ��������� �� 30 ������
-    track1.print();
+    // Додавання треку з файлу
+    playlist.addTrackFromFile("Text.txt");  // Формат файлу: author name year duration genre
+
+    // Виведення оновленого плейлиста
+    playlist.printPlaylist();
 
     return 0;
 }
