@@ -5,14 +5,16 @@
 class Track : public Song
 {
 private:
-    int duration_seconds;
+    int duration_seconds;  // РўСЂРёРІР°Р»С–СЃС‚СЊ С‚СЂРµРєСѓ РІ СЃРµРєСѓРЅРґР°С…
+    std::string genre;     // Р–Р°РЅСЂ С‚СЂРµРєСѓ
 
 public:
-    Track();
-    Track(std::string author, std::string name, int years, int duration);
-    Track(const Track& T);
+    Track(); 
+    Track(std::string author, std::string name, int years, int duration, std::string genre);  
+    Track(const Track& T); 
 
-    void print() const;  // Перевизначення методу для виведення
-    int getDurationInSeconds() const;  // Метод для отримання тривалості в секундах
-    Track operator+(int additionalSeconds);  // Перевантаження оператора "+"
+    void print() const;  // РџРµСЂРµРІРёР·РЅР°С‡РµРЅРЅСЏ РјРµС‚РѕРґСѓ РґР»СЏ РІРёРІРµРґРµРЅРЅСЏ
+    int getDurationInSeconds() const;  // РњРµС‚РѕРґ РґР»СЏ РѕС‚СЂРёРјР°РЅРЅСЏ С‚СЂРёРІР°Р»РѕСЃС‚С– РІ СЃРµРєСѓРЅРґР°С…
+    Track operator+(int additionalSeconds);  // РџРµСЂРµРІР°РЅС‚Р°Р¶РµРЅРЅСЏ РѕРїРµСЂР°С‚РѕСЂР° "+"
+    std::string getGenre() const;  // РњРµС‚РѕРґ РґР»СЏ РѕС‚СЂРёРјР°РЅРЅСЏ Р¶Р°РЅСЂСѓ
 };
