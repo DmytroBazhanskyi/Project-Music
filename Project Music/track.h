@@ -12,6 +12,7 @@ public:
     Track(); 
     Track(std::string author, std::string name, int years, int duration, std::string genre);  
     Track(const Track& T); 
+    ~Track() override = default;//добавила віртуальний деструктор(Микитенко Ярослава)
 
     void print() const;  // Перевизначення методу для виведення
     int getDurationInSeconds() const;  // Метод для отримання тривалості в секундах
